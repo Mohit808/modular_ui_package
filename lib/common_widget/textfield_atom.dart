@@ -14,6 +14,7 @@ class TextFieldCommon extends TextFormField{
     Widget? suffixIcon,
     bool? hideOutlineBorder,
     double? borderRadius,
+    super.enabled,
     super.controller,
     super.validator,
     super.initialValue,
