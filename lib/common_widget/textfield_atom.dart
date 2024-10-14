@@ -15,6 +15,7 @@ class TextFieldCommon extends TextFormField{
     bool? hideOutlineBorder,
     double? borderRadius,
     super.enabled,
+    super.onTap,
     super.controller,
     super.validator,
     super.initialValue,
