@@ -18,7 +18,7 @@ class BannerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ContainerDecorated(borderRadius: 15,padding: 0,width: width??double.infinity,
-      linearGradient: const LinearGradient(
+      linearGradient:  LinearGradient(
         colors: [
           Color(int.parse(startColor!)??0xFF3D6BF3),
           Color(int.parse(endColor!)??0xFF9EE0F3),
