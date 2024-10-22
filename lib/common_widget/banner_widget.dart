@@ -6,20 +6,22 @@ import '../theme/app_paddings.dart';
 import 'container_decorated.dart';
 
 class BannerWidget extends StatelessWidget {
-  const BannerWidget({super.key, this.heading, this.description, this.buttonText, this.image, this.isNetworkImage,this.width});
+  const BannerWidget({super.key, this.heading, this.description, this.buttonText, this.image, this.isNetworkImage,this.width,this.startColor,this.endColor});
   final String? heading;
   final String? description;
   final String? buttonText;
   final dynamic image;
   final bool? isNetworkImage;
   final double? width;
+  final String? startColor;
+  final String? endColor;
   @override
   Widget build(BuildContext context) {
     return ContainerDecorated(borderRadius: 15,padding: 0,width: width??double.infinity,
       linearGradient: const LinearGradient(
         colors: [
-          Color(0xFF3D6BF3),
-          Color(0xFF9EE0F3),
+          Color(startColor??0xFF3D6BF3),
+          Color(endColor??0xFF9EE0F3),
         ],
         begin: Alignment.topLeft,
         end: Alignment.centerRight,
