@@ -22,6 +22,6 @@ class TextFieldWithHeadingMolecule extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  InputWithHeadingMolecule(mandatoryString: mandatoryString,colorMandatoryString: colorMandatoryString,heading: heading??"", widget: TextFieldCommon(suffixIcon: suffixIcon,prefixIcon: prefixIcon,controller: controller,hintText: hintText??"",validator: validator,inputFormatters: inputFormatters,keyboardType: keyboardType,onChanged: onChanged,));
+    return  InputWithHeadingMolecule(fontWeightHeading: fontWeightHeading,mandatoryString: mandatoryString,colorMandatoryString: colorMandatoryString,heading: heading??"", widget: TextFieldCommon(suffixIcon: suffixIcon,prefixIcon: prefixIcon,controller: controller,hintText: hintText??"",validator: validator,inputFormatters: inputFormatters,keyboardType: keyboardType,onChanged: onChanged,));
   }
 }
