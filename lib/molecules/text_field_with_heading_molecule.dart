@@ -17,7 +17,7 @@ class TextFieldWithHeadingMolecule extends StatelessWidget {
   final String? mandatoryString;
   final Color? colorMandatoryString;
   final Widget? suffixIcon;
-  final fontWeight? fontWeightHeading;
+  final FontWeight? fontWeightHeading;
 
 
   @override
