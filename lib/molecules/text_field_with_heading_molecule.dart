@@ -5,7 +5,7 @@ import 'input_with_heading_molecule.dart';
 import '../common_widget/textfield_atom.dart';
 
 class TextFieldWithHeadingMolecule extends StatelessWidget {
-  const TextFieldWithHeadingMolecule({super.key, this.controller, this.hintText, this.validator, this.inputFormatters, this.keyboardType, this.onChanged, this.heading, this.prefixIcon, this.mandatoryString, this.colorMandatoryString, this.suffixIcon});
+  const TextFieldWithHeadingMolecule({super.key, this.controller, this.hintText, this.validator, this.inputFormatters, this.keyboardType, this.onChanged, this.heading, this.prefixIcon, this.mandatoryString, this.colorMandatoryString, this.suffixIcon,this.fontWeightHeading});
   final TextEditingController? controller;
   final String? hintText;
   final String? Function(String?)? validator;
@@ -17,6 +17,7 @@ class TextFieldWithHeadingMolecule extends StatelessWidget {
   final String? mandatoryString;
   final Color? colorMandatoryString;
   final Widget? suffixIcon;
+  final fontWeight? fontWeightHeading;
 
 
   @override
