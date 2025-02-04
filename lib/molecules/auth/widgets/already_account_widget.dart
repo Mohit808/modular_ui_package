@@ -4,8 +4,9 @@ import '../../../text_atoms/text_common.dart';
 import '../../../theme/app_colors.dart';
 
 class AlreadyAccountWidget extends StatelessWidget {
-  const AlreadyAccountWidget({super.key, this.off});
+  const AlreadyAccountWidget({super.key, this.off, this.onTap});
   final bool? off;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +14,7 @@ class AlreadyAccountWidget extends StatelessWidget {
       children: [
         const NormalText(text: "Already Have An Account? ",fontWeight: FontWeight.w500,),
         InkWell(onTap: (){
+          if(onTap!=null) onTap!();
           // if(off!=null){
           //   // Get.off(()=>LoginScreen());
           // }else{Get.to(()=>LoginScreen());}

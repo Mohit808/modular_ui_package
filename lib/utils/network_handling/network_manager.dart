@@ -30,12 +30,17 @@ class NetworkManager{
     // }
   }
 
-  post(String endPoint,{data}) async {
+  post(String endPoint,{data,contentJson}) async {
     var header={
       "Authorization":"token $token",
       // "accept":"application/json",
-      "Content-Type": "application/json"
+      // "Content-Type": "application/json"
     };
+    if(contentJson!=null){
+      header.addAll({
+        "Content-Type": "application/json"
+      });
+    }
     print(header);
     print(AppConstModule.baseUrl+endPoint);
     print(data);

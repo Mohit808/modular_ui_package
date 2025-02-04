@@ -8,4 +8,5 @@ class AppImagesConst{
   static String get filter => "${assetPath}filter.png";
   static String get vegitable => "${assetPath}vegitable.png";
   static String get vegitable2 => "${assetPath}vegitable2.png";
+  static String get logout => "${assetPath}logout.png";
 }
