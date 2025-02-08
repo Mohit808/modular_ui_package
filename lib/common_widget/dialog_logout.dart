@@ -4,7 +4,6 @@ import 'package:modular_ui_package/common_functions/image_network.dart';
 import 'package:modular_ui_package/common_widget/button_single_atom.dart';
 import 'package:modular_ui_package/text_atoms/text_common.dart';
 import 'package:modular_ui_package/utils/app_images.dart';
-import 'package:modular_ui_package/utils/utils.dart';
 
 class DialogLogout extends StatelessWidget {
   const DialogLogout({super.key});

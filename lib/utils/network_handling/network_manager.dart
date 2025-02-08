@@ -12,7 +12,7 @@ class NetworkManager{
 
   get(String endPoint) async {
     var header={
-      "Authorization":"token $token",
+      "Authorization":token.isEmpty?"":"token $token",
       "accept":"application/json"
     };
     try{
