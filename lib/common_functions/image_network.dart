@@ -19,11 +19,11 @@ class NetworkOrAssetImage extends StatelessWidget {
         ClipRRect(borderRadius: BorderRadius.circular(borderRadius??0),child:
         isFile!=null?
         Image.file(File(src),height: height,width: width,color:color,fit: fit,errorBuilder: (a,b,c){
-          return Image.asset(AppImagesConst.imageError);
+          return Image.asset(AppImagesConst.imageError,height: height,width: width);
         },):
         src.startsWith("http") ?
         Image.network(src,height: height,width: width,color:color,fit: fit,errorBuilder: (a,b,c){
-          return Image.asset(AppImagesConst.imageError);
+          return Image.asset(AppImagesConst.imageError,height: height,width: width);
         },):
 
         Image.asset(src,height: height,width: width,color: color,fit: fit,errorBuilder: (a,b,c){
