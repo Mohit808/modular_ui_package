@@ -14,12 +14,14 @@ class AppBarCommon extends StatelessWidget implements PreferredSizeWidget{
   final Color? color;
   final Color? colorIconTheme;
   final bool? centerTitle;
+  final double? leadingWidth;
 
-  const AppBarCommon({super.key, required this.title, this.actions = const [], this.height, this.elevation, this.leading, this.titleColor, this.color, this.colorIconTheme, this.centerTitle});
+  const AppBarCommon({super.key, required this.title, this.actions = const [], this.height, this.elevation, this.leading, this.titleColor, this.color, this.colorIconTheme, this.centerTitle, this.leadingWidth});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      leadingWidth: leadingWidth ,
       elevation: elevation,
       backgroundColor: color??AppColors.primary,
       leading:leading,
