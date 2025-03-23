@@ -39,7 +39,7 @@ class BannerWidget extends StatelessWidget {
           children: [
             Expanded(
               child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
-                BigText20(text: heading??"Monsoon's Exotic \nHarvest!",color: Colors.white,maxLines: 3,overflow: TextOverflow.ellipsis,),
+                BigText20(text: heading??"Monsoon's Exotic \nHarvest!",color: Colors.white,maxLine: 2,overflow: TextOverflow.ellipsis,),
                 const SizedBox(height: 16,),
                 SmallText(text: description??"Up to 30% OFF on fruits that \nare too good to last forever",color: Colors.white,fontWeight: FontWeight.w500,maxLine: 2,overflow: TextOverflow.ellipsis,),
                 const SizedBox(height: 16,),

@@ -98,15 +98,15 @@ class BigText20 extends StatelessWidget{
   final TextOverflow? overflow;
   final TextDecoration? textDecoration;
   final double? letterSpacing;
-  final int? maxLines;
+  final int? maxLine;
 
 
 
 
-  const BigText20({super.key, required this.text, this.color, this.size, this.fontWeight, this.textAlign, this.overflow, this.textDecoration, this.letterSpacing, this.maxLines});
+  const BigText20({super.key, required this.text, this.color, this.size, this.fontWeight, this.textAlign, this.overflow, this.textDecoration, this.letterSpacing, this.maxLine});
   @override
   Widget build(BuildContext context) {
-    return Text(text,style: TextStyle(letterSpacing: letterSpacing,decoration: textDecoration,color: color,fontSize: size??20,fontWeight: fontWeight??FontWeight.w700),textAlign: textAlign,overflow: overflow,);
+    return Text(text,maxLines: maxLine,style: TextStyle(letterSpacing: letterSpacing,decoration: textDecoration,color: color,fontSize: size??20,fontWeight: fontWeight??FontWeight.w700),textAlign: textAlign,overflow: overflow,);
   }
 }
 class BigText24 extends StatelessWidget{
