@@ -39,9 +39,9 @@ class BannerWidget extends StatelessWidget {
           children: [
             Expanded(
               child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
-                BigText20(text: heading??"Monsoon's Exotic \nHarvest!",color: Colors.white,maxLines: 2,),
+                BigText20(text: heading??"Monsoon's Exotic \nHarvest!",color: Colors.white,maxLines: 2,overflow: TextOverflow.ellipsis,),
                 const SizedBox(height: 16,),
-                SmallText(text: description??"Up to 30% OFF on fruits that \nare too good to last forever",color: Colors.white,fontWeight: FontWeight.w500,maxLine: 2,),
+                SmallText(text: description??"Up to 30% OFF on fruits that \nare too good to last forever",color: Colors.white,fontWeight: FontWeight.w500,maxLine: 2,overflow: TextOverflow.ellipsis,),
                 const SizedBox(height: 16,),
                 ContainerDecorated(borderRadius: 8,elevation: 3,paddingEdgeInsets:const EdgeInsets.symmetric(horizontal: 12,vertical: 6),color: Colors.white,child: SmallText(text: buttonText??"ORDER NOW",fontWeight: FontWeight.w800,size: 10,color: Colors.blue,),)
               ],),
