@@ -46,7 +46,7 @@ class BannerWidget extends StatelessWidget {
                 ContainerDecorated(borderRadius: 8,elevation: 3,paddingEdgeInsets:const EdgeInsets.symmetric(horizontal: 12,vertical: 6),color: Colors.white,child: SmallText(text: buttonText??"ORDER NOW",fontWeight: FontWeight.w800,size: 10,color: Colors.blue,),)
               ],),
             ),
-            image==null?SizedBox():image.runtimeType!=String?image:isNetworkImage!=null?NetworkOrAssetImage(src:image,height: 150,width: 150):Image.asset(image?? "assets/images/vegitable.png",height: 150,width: 150,fit: BoxFit.cover,),
+            image==null?SizedBox():image.runtimeType!=String?image:isNetworkImage!=null?ImageCommon(src:image,height: 150,width: 150):Image.asset(image?? "assets/images/vegitable.png",height: 150,width: 150,fit: BoxFit.cover,),
 
           ],
         ),

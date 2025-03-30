@@ -19,6 +19,7 @@ dependencies:
   font_awesome_flutter: any
   get_storage: any
   google_sign_in: any
+  readmore : any
 
 
 dev_dependencies:

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:modular_ui_package/theme/app_colors.dart';
 
 import '../theme/app_sizes.dart';
 import 'border_atom.dart';
@@ -14,6 +15,7 @@ class TextFieldCommon extends TextFormField{
     Widget? suffixIcon,
     bool? hideOutlineBorder,
     double? borderRadius,
+    Color? fillColor,
     super.enabled,
     super.onTap,
     super.controller,
@@ -41,6 +43,8 @@ class TextFieldCommon extends TextFormField{
       decoration: InputDecoration(enabledBorder: hideOutlineBorder!=null?null:OutlineInputBorder(borderRadius: borderRadius!=null?BorderRadius.circular(borderRadius):BorderAtom.borderRadiusTextField,borderSide: BorderSide(color: Colors.grey.shade300)),
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
+        fillColor: fillColor??AppColors.textFieldBackgroundColor,
+        filled: fillColor!=null?true:AppColors.textFieldBackgroundColor!=null?true:null,
         hintText: hintText,
         hintStyle: const TextStyle(fontSize: 12),
         contentPadding: const EdgeInsets.all(AppSizes.h_12),

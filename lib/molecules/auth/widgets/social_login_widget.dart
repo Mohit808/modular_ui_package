@@ -18,7 +18,7 @@ class SocialLoginWidget extends StatelessWidget {
         return Column(children: [
 
           ButtonSingleAtom(color: Colors.white,colorBorder: Colors.grey.shade400,widget: Row(mainAxisAlignment: MainAxisAlignment.center,children: [
-            NetworkOrAssetImage(src: AppImagesConst.google),
+            ImageCommon(src: AppImagesConst.google),
             const SizedBox(width: 16,),
             const NormalHeadingText(text: "Continue with Google",color: Colors.grey,)
           ],),tap: (){
@@ -28,7 +28,7 @@ class SocialLoginWidget extends StatelessWidget {
 
 
           ButtonSingleAtom(color: Colors.white,colorBorder: Colors.grey.shade400,widget: Row(mainAxisAlignment: MainAxisAlignment.center,children: [
-            NetworkOrAssetImage(src: AppImagesConst.apple),
+            ImageCommon(src: AppImagesConst.apple),
             const SizedBox(width: 16,),
             const NormalHeadingText(text: "Continue with Apple",color: Colors.grey,)
           ],),),

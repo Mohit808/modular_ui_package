@@ -18,7 +18,7 @@ class CartItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ContainerDecorated(borderRadius: 15,color: Colors.white,padding: 8,child: Row(children: [
-      ContainerDecorated(padding: 0,child: NetworkOrAssetImage(src: image?? AppImagesConst.vegitable,height: 40,width: 40,)),
+      ContainerDecorated(padding: 0,child: ImageCommon(src: image?? AppImagesConst.vegitable,height: 40,width: 40,)),
       const SizedBox(width: 8,),
        Expanded(flex: 3,child: Column(crossAxisAlignment: CrossAxisAlignment.start,
         children: [

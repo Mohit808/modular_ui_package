@@ -40,7 +40,7 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height: 24,),
             const SocialIconWidget(),
             const SizedBox(height: 48,),
-            NetworkOrAssetImage(src: AppImagesConst.logo),
+            ImageCommon(src: AppImagesConst.logo),
             const SizedBox(height: 48,)
           ],),
         ),

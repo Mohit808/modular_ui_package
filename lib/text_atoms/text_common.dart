@@ -10,11 +10,17 @@ class SmallText extends StatelessWidget{
   final TextDecoration? textDecoration;
   final double? letterSpacing;
   final int? maxLine;
+  final double? padding;
+  final double? paddingTop;
+  final double? paddingBottom;
+  final double? paddingLeft;
+  final double? paddingRight;
 
-  const SmallText({super.key, required this.text, this.color, this.size, this.fontWeight, this.textAlign, this.overflow, this.textDecoration, this.letterSpacing, this.maxLine});
+  const SmallText({super.key, required this.text, this.color, this.size, this.fontWeight, this.textAlign, this.overflow, this.textDecoration, this.letterSpacing, this.maxLine, this.padding, this.paddingTop, this.paddingBottom, this.paddingLeft, this.paddingRight});
   @override
   Widget build(BuildContext context) {
-    return Text(text,maxLines: maxLine,style: TextStyle(letterSpacing: letterSpacing,decoration: textDecoration,color: color,fontSize: size??12,fontWeight: fontWeight),textAlign: textAlign,overflow: overflow,);
+    return Padding(padding: EdgeInsets.only(top: paddingTop??padding??0,bottom: paddingBottom??padding??0,left: paddingLeft??padding??0,right: paddingRight??padding??0), child: Text(text,maxLines: maxLine,style: TextStyle(letterSpacing: letterSpacing,decoration: textDecoration,color: color,fontSize: size??12,fontWeight: fontWeight),textAlign: textAlign,overflow: overflow,),
+    );
   }
 }
 

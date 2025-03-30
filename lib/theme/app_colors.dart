@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 class AppColors{
   static Color get primary => Get.theme.primaryColor;
   static Color get scaffoldBackgroundColor=> Get.theme.scaffoldBackgroundColor;
+  static Color? textFieldBackgroundColor;
 
 
   // primaryColorLight: AppColors.materialColor, optional (if required like app bar title in black)

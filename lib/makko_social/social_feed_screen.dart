@@ -33,7 +33,7 @@ class SocialFeedScreen extends StatelessWidget {
                           children: [
                             Stack(
                               children: [
-                                ContainerDecorated(padding: 2,colorBorder: index==0?Colors.blue:Colors.grey,color: Colors.transparent,borderRadius: 50,child: SizedBox(height: 50,width: 50,child: ClipRRect(borderRadius: BorderRadius.circular(50),child: NetworkOrAssetImage(src: "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",fit: BoxFit.cover,)))),
+                                ContainerDecorated(padding: 2,colorBorder: index==0?Colors.blue:Colors.grey,color: Colors.transparent,borderRadius: 50,child: SizedBox(height: 50,width: 50,child: ClipRRect(borderRadius: BorderRadius.circular(50),child: ImageCommon(src: "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",fit: BoxFit.cover,)))),
 
                                 index!=0?SizedBox():Positioned(bottom: 0,right: 0,child: ContainerDecorated(borderRadius: 20,color: Colors.blue,padding: 2,child: Icon(Icons.add,color: Colors.white,size: 16,)))
                               ],
@@ -65,7 +65,7 @@ class SocialFeedScreen extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(bottom: 8.0,top: 8),
                           child: Row(crossAxisAlignment: CrossAxisAlignment.start,children: [
-                            controller.layoutChanged?SizedBox():SizedBox(height: 40,width: 40,child: ClipRRect(borderRadius: BorderRadius.circular(10),child: NetworkOrAssetImage(src: "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",fit: BoxFit.cover,))),
+                            controller.layoutChanged?SizedBox():SizedBox(height: 40,width: 40,child: ClipRRect(borderRadius: BorderRadius.circular(10),child: ImageCommon(src: "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",fit: BoxFit.cover,))),
                             controller.layoutChanged?SizedBox():SizedBox(width: 16,),
                             Expanded(
                               child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
@@ -73,7 +73,7 @@ class SocialFeedScreen extends StatelessWidget {
                                   children: [
                                     Row(
                                       children: [
-                                        !controller.layoutChanged?SizedBox(): SizedBox(height: 24,width: 24,child: ClipRRect(borderRadius: BorderRadius.circular(20),child: NetworkOrAssetImage(src: "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",fit: BoxFit.cover,))),
+                                        !controller.layoutChanged?SizedBox(): SizedBox(height: 24,width: 24,child: ClipRRect(borderRadius: BorderRadius.circular(20),child: ImageCommon(src: "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",fit: BoxFit.cover,))),
                                         !controller.layoutChanged?SizedBox(): SizedBox(width: 8,),
                                         SmallText(text: "Ivan Brennan",fontWeight: FontWeight.w700,letterSpacing: 0.3,),
                                       ],
@@ -88,7 +88,7 @@ class SocialFeedScreen extends StatelessWidget {
                                 SmallText(text: "Seriously, can someone tell to stop talking about comics. is getting annoying"),
                                 Padding(
                                   padding: const EdgeInsets.only(top: 8.0,bottom: 8),
-                                  child: SizedBox(width: double.infinity,child: ClipRRect(borderRadius: BorderRadius.circular(10),child: NetworkOrAssetImage(src: "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80"))),
+                                  child: SizedBox(width: double.infinity,child: ClipRRect(borderRadius: BorderRadius.circular(10),child: ImageCommon(src: "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80"))),
                                 ),
                                 SizedBox(height: 8,),
                                 Row(children: [

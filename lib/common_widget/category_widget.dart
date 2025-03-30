@@ -17,7 +17,7 @@ class CategoryWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ContainerDecorated(color: loading!=null?null:Colors.pinkAccent.shade100.withOpacity(0.1),borderRadius: 15,child: NetworkOrAssetImage(src: image!=null?image! : DateTime.timestamp().millisecond.isEven?AppImagesConst.vegitable2: AppImagesConst.vegitable,height: height??75,width: width??75,fit: BoxFit.cover,),),
+        ContainerDecorated(color: loading!=null?null:Colors.pinkAccent.shade100.withOpacity(0.1),borderRadius: 15,child: ImageCommon(src: image!=null?image! : DateTime.timestamp().millisecond.isEven?AppImagesConst.vegitable2: AppImagesConst.vegitable,height: height??75,width: width??75,fit: BoxFit.cover,),),
         const SizedBox(height: 8,),
         SizedBox(width: 75,child: SmallText(text: text??"Fresh \nVegitable",fontWeight: FontWeight.w700,textAlign: TextAlign.center,))
       ],

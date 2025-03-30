@@ -33,8 +33,9 @@ hideKeyboard(){
 
 
 class Utils{
-  init({colorCode, double? radius,LinearGradient? gradient}){
+  init({colorCode, double? radius,LinearGradient? gradient,Color? textFieldBackgroundColor}){
     setUpThemeColor(colorCode??0xFF345259); //0xFF345259
+    AppColors.textFieldBackgroundColor=textFieldBackgroundColor;
     BorderAtom.setRadius= BorderRadius.circular(radius??AppSizes.h_4); //AppSizes.h_10
     BorderAtom.setRadiusTextField= BorderRadius.circular(radius??AppSizes.h_4); //AppSizes.h_10
     BorderAtom.borderRadiusValue = radius??AppSizes.h_4;
