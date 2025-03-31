@@ -20,6 +20,7 @@ dependencies:
   get_storage: any
   google_sign_in: any
   readmore : any
+  searchfield: any
 
 
 dev_dependencies:
