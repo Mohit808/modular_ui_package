@@ -9,8 +9,8 @@ import '../../../text_atoms/text_common.dart';
 
 
 class SocialLoginWidget extends StatelessWidget {
-  const SocialLoginWidget({super.key, this.callBack, this.hideAppleLogin});
-  final Function(dynamic)? callBack;
+  const SocialLoginWidget({super.key, this.onTapGoogle, this.hideAppleLogin});
+  final Function()? onTapGoogle;
   final bool? hideAppleLogin;
 
 
@@ -25,8 +25,8 @@ class SocialLoginWidget extends StatelessWidget {
             const SizedBox(width: 16,),
             const NormalHeadingText(text: "Continue with Google",color: Colors.grey,)
           ],),tap: () async {
-            dynamic value=await controller.loginWithGoogle();
-            if(callBack!=null) callBack!(value);
+            // dynamic value=await controller.loginWithGoogle();
+            if(onTapGoogle!=null) onTapGoogle!();
           },),
 
 
