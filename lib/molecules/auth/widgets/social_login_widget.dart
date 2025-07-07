@@ -9,15 +9,16 @@ import '../../../text_atoms/text_common.dart';
 
 
 class SocialLoginWidget extends StatelessWidget {
-  const SocialLoginWidget({super.key, this.callBack});
+  const SocialLoginWidget({super.key, this.callBack, this.hideAppleLogin});
   final Function(dynamic)? callBack;
+  final bool? hideAppleLogin;
 
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder(init: ControllerSocialLogin(),
       builder: (controller) {
-        return Column(children: [
+        return Column(spacing: 24,children: [
 
           ButtonSingleAtom(color: Colors.white,colorBorder: Colors.grey.shade400,widget: Row(mainAxisAlignment: MainAxisAlignment.center,children: [
             ImageCommon(src: AppImagesConst.google),
@@ -27,10 +28,9 @@ class SocialLoginWidget extends StatelessWidget {
             dynamic value=await controller.loginWithGoogle();
             if(callBack!=null) callBack!(value);
           },),
-          const SizedBox(height: 24,),
 
 
-          ButtonSingleAtom(color: Colors.white,colorBorder: Colors.grey.shade400,widget: Row(mainAxisAlignment: MainAxisAlignment.center,children: [
+          if(hideAppleLogin!=true)ButtonSingleAtom(color: Colors.white,colorBorder: Colors.grey.shade400,widget: Row(mainAxisAlignment: MainAxisAlignment.center,children: [
             ImageCommon(src: AppImagesConst.apple),
             const SizedBox(width: 16,),
             const NormalHeadingText(text: "Continue with Apple",color: Colors.grey,)
