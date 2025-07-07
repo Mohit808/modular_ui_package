@@ -18,7 +18,7 @@ dependencies:
   image_picker : any
   font_awesome_flutter: any
   get_storage: any
-  google_sign_in: any
+  google_sign_in: ^6.2.2
   readmore : any
   searchfield: any
 
