@@ -9,7 +9,9 @@ import '../../../text_atoms/text_common.dart';
 
 
 class SocialLoginWidget extends StatelessWidget {
-  const SocialLoginWidget({super.key});
+  const SocialLoginWidget({super.key, this.callBack});
+  final Function(dynamic)? callBack;
+
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +23,9 @@ class SocialLoginWidget extends StatelessWidget {
             ImageCommon(src: AppImagesConst.google),
             const SizedBox(width: 16,),
             const NormalHeadingText(text: "Continue with Google",color: Colors.grey,)
-          ],),tap: (){
-            controller.loginWithGoogle();
+          ],),tap: () async {
+            dynamic value=await controller.loginWithGoogle();
+            if(callBack!=null) callBack!(value);
           },),
           const SizedBox(height: 24,),
 
