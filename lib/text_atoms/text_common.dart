@@ -10,17 +10,14 @@ class SmallText extends StatelessWidget{
   final TextDecoration? textDecoration;
   final double? letterSpacing;
   final int? maxLine;
-  final double? padding;
-  final double? paddingTop;
-  final double? paddingBottom;
-  final double? paddingLeft;
-  final double? paddingRight;
+  final int? maxLength;
+  final FontStyle? fontStyle;
+  final TextStyle? textStyle;
 
-  const SmallText({super.key, required this.text, this.color, this.size, this.fontWeight, this.textAlign, this.overflow, this.textDecoration, this.letterSpacing, this.maxLine, this.padding, this.paddingTop, this.paddingBottom, this.paddingLeft, this.paddingRight});
+  const SmallText({super.key, required this.text, this.color, this.size, this.fontWeight, this.textAlign, this.overflow, this.textDecoration, this.letterSpacing, this.maxLine,this.maxLength, this.fontStyle, this.textStyle});
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.only(top: paddingTop??padding??0,bottom: paddingBottom??padding??0,left: paddingLeft??padding??0,right: paddingRight??padding??0), child: Text(text,maxLines: maxLine,style: TextStyle(letterSpacing: letterSpacing,decoration: textDecoration,color: color,fontSize: size??12,fontWeight: fontWeight),textAlign: textAlign,overflow: overflow,),
-    );
+    return Text(maxLength!=null && text.length>maxLength!?text.substring(0,maxLength):text,maxLines: maxLine,style: textStyle??TextStyle(fontStyle: fontStyle,letterSpacing: letterSpacing,decoration: textDecoration,color: color,fontSize: size??12,fontWeight: fontWeight),textAlign: textAlign,overflow: overflow,);
   }
 }
 
@@ -51,12 +48,13 @@ class NormalHeadingText extends StatelessWidget{
   final TextOverflow? overflow;
   final TextDecoration? textDecoration;
   final double? letterSpacing;
+  final int? maxLine;
 
 
-  const NormalHeadingText({super.key, required this.text, this.color, this.size, this.fontWeight, this.textAlign, this.overflow, this.textDecoration, this.letterSpacing});
+  const NormalHeadingText({super.key, required this.text, this.color, this.size, this.fontWeight, this.textAlign, this.overflow, this.textDecoration, this.letterSpacing, this.maxLine});
   @override
   Widget build(BuildContext context) {
-    return Text(text,style: TextStyle(letterSpacing: letterSpacing,decoration: textDecoration,color: color,fontSize: size,fontWeight: fontWeight??FontWeight.w600),textAlign: textAlign,overflow: overflow,);
+    return Text(text,maxLines: maxLine,style: TextStyle(letterSpacing: letterSpacing,decoration: textDecoration,color: color,fontSize: size,fontWeight: fontWeight??FontWeight.w600),textAlign: textAlign,overflow: overflow,);
   }
 }
 class HeadingText extends StatelessWidget{
@@ -104,15 +102,13 @@ class BigText20 extends StatelessWidget{
   final TextOverflow? overflow;
   final TextDecoration? textDecoration;
   final double? letterSpacing;
-  final int? maxLine;
 
 
 
-
-  const BigText20({super.key, required this.text, this.color, this.size, this.fontWeight, this.textAlign, this.overflow, this.textDecoration, this.letterSpacing, this.maxLine});
+  const BigText20({super.key, required this.text, this.color, this.size, this.fontWeight, this.textAlign, this.overflow, this.textDecoration, this.letterSpacing});
   @override
   Widget build(BuildContext context) {
-    return Text(text,maxLines: maxLine,style: TextStyle(letterSpacing: letterSpacing,decoration: textDecoration,color: color,fontSize: size??20,fontWeight: fontWeight??FontWeight.w700),textAlign: textAlign,overflow: overflow,);
+    return Text(text,style: TextStyle(letterSpacing: letterSpacing,decoration: textDecoration,color: color,fontSize: size??20,fontWeight: fontWeight??FontWeight.w700),textAlign: textAlign,overflow: overflow,);
   }
 }
 class BigText24 extends StatelessWidget{
@@ -124,13 +120,12 @@ class BigText24 extends StatelessWidget{
   final TextOverflow? overflow;
   final TextDecoration? textDecoration;
   final double? letterSpacing;
-  final int? maxLines;
 
 
 
-  const BigText24({super.key, required this.text, this.color, this.size, this.fontWeight, this.textAlign, this.overflow, this.textDecoration, this.letterSpacing, this.maxLines});
+  const BigText24({super.key, required this.text, this.color, this.size, this.fontWeight, this.textAlign, this.overflow, this.textDecoration, this.letterSpacing});
   @override
   Widget build(BuildContext context) {
-    return Text(text,maxLines: maxLines,style: TextStyle(letterSpacing: letterSpacing,decoration: textDecoration,color: color,fontSize: size??24,fontWeight: fontWeight??FontWeight.w700),textAlign: textAlign,overflow: overflow,);
+    return Text(text,style: TextStyle(letterSpacing: letterSpacing,decoration: textDecoration,color: color,fontSize: size??24,fontWeight: fontWeight??FontWeight.w700),textAlign: textAlign,overflow: overflow,);
   }
 }
