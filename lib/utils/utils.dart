@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:modular_ui_package/models/user_model.dart';
 
 import '../common_widget/border_atom.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_sizes.dart';
 String token="";
 late GetStorage box;
+UserInfo? userInfo;
 
 
 showToast(msg){

@@ -13,7 +13,7 @@ class DialogLogout extends StatelessWidget {
     return AlertDialog(content: Padding(
       padding: const EdgeInsets.symmetric(vertical: 16.0),
       child: Column(mainAxisSize: MainAxisSize.min,children: [
-        Align(alignment: Alignment.center,child: ImageCommon(src: AppImagesConst.logout,height: 70,width: 70,)),
+        Align(alignment: Alignment.center,child: ImageCommon( AppImagesConst.logout,height: 70,width: 70,)),
         SizedBox(height: 24,),
         NormalHeadingText(text: "Oh no! You're leaving...",fontWeight: FontWeight.w400,),
         SizedBox(height: 8,),

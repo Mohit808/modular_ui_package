@@ -15,7 +15,7 @@ class ProfileHeaderWidget extends StatelessWidget {
     return
 
       Row(crossAxisAlignment: CrossAxisAlignment.start,children: [
-        ContainerDecorated(elevation: 2,padding: 2,color: AppColors.primary,borderRadius: 50,child: SizedBox(height: 50,width: 50,child: ImageCommon(src: AppImagesConst.user,))),
+        ContainerDecorated(elevation: 2,padding: 2,color: AppColors.primary,borderRadius: 50,child: SizedBox(height: 50,width: 50,child: ImageCommon( AppImagesConst.user,))),
         SizedBox(width: 8,),
         Expanded(
           child: Column(crossAxisAlignment: CrossAxisAlignment.start,

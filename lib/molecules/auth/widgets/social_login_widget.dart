@@ -23,7 +23,7 @@ class SocialLoginWidget extends StatelessWidget {
         return Column(spacing: 24,children: [
 
           ButtonSingleAtom(status:apiResponseGoogle?.status,color: Colors.white,colorBorder: Colors.grey.shade400,widget: Row(mainAxisAlignment: MainAxisAlignment.center,children: [
-            ImageCommon(src: AppImagesConst.google),
+            ImageCommon( AppImagesConst.google),
             const SizedBox(width: 16,),
             const NormalHeadingText(text: "Continue with Google",color: Colors.grey,)
           ],),tap: () async {
@@ -33,7 +33,7 @@ class SocialLoginWidget extends StatelessWidget {
 
 
           if(hideAppleLogin!=true)ButtonSingleAtom(color: Colors.white,colorBorder: Colors.grey.shade400,widget: Row(mainAxisAlignment: MainAxisAlignment.center,children: [
-            ImageCommon(src: AppImagesConst.apple),
+            ImageCommon( AppImagesConst.apple),
             const SizedBox(width: 16,),
             const NormalHeadingText(text: "Continue with Apple",color: Colors.grey,)
           ],),),

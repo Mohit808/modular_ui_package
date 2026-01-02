@@ -1,38 +1,38 @@
 
 class ModelX {
   ModelX({
-      num? status, 
-      bool? result, 
-      String? message,}){
-    _status = status;
-    _result = result;
+    String? message,
+    num? status,
+    dynamic data,}){
     _message = message;
-}
+    _status = status;
+    _data = data;
+  }
 
   ModelX.fromJson(dynamic json) {
-    _status = json['status'];
-    _result = json['result'];
     _message = json['message'];
+    _status = json['status'];
+    _data = json['data'];
   }
-  num? _status;
-  bool? _result;
   String? _message;
-ModelX copyWith({  num? status,
-  bool? result,
-  String? message,
-}) => ModelX(  status: status ?? _status,
-  result: result ?? _result,
-  message: message ?? _message,
-);
-  num? get status => _status;
-  bool? get result => _result;
+  num? _status;
+  dynamic _data;
+  ModelX copyWith({  String? message,
+    num? status,
+    dynamic data,
+  }) => ModelX(  message: message ?? _message,
+    status: status ?? _status,
+    data: data ?? _data,
+  );
   String? get message => _message;
+  num? get status => _status;
+  dynamic get data => _data;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map['status'] = _status;
-    map['result'] = _result;
     map['message'] = _message;
+    map['status'] = _status;
+    map['data'] = _data;
     return map;
   }
 

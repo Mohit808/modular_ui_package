@@ -98,7 +98,7 @@ class _MakkoHomeScreenState extends State<MakkoHomeScreen> with SingleTickerProv
                         return Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 8),
                           child: Row(children: [
-                            SizedBox( height: 50, width: 50,child: ClipRRect(borderRadius: BorderRadius.circular(16),child: ImageCommon(src: list[index],fit: BoxFit.cover,))),
+                            SizedBox( height: 50, width: 50,child: ClipRRect(borderRadius: BorderRadius.circular(16),child: ImageCommon(list[index]))),
                             SizedBox(width: 16,),
                             SmallText(text: "Technology and Innovation",fontWeight: FontWeight.w500,)
                           ],),
@@ -107,7 +107,7 @@ class _MakkoHomeScreenState extends State<MakkoHomeScreen> with SingleTickerProv
                     ),
                   ],
                 ),));
-              },child: SizedBox(height: 24,width: 24,child: ImageCommon(src: AppImagesConst.filter))),
+              },child: SizedBox(height: 24,width: 24,child: ImageCommon( AppImagesConst.filter))),
               SizedBox(width: 16,)
             ],
           ),
@@ -122,17 +122,14 @@ class _MakkoHomeScreenState extends State<MakkoHomeScreen> with SingleTickerProv
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(16),
-                      child: ImageCommon(
-                        fit: BoxFit.fitWidth,
-                        src: list[index],
-                      ),
+                      child: ImageCommon(list[index], boxFit: BoxFit.fitWidth,),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0,top: 8),
                       child: InkWell(onTap: (){
-                        Get.to(()=>MakkoUserProfileScreen());
+                        Get.to(()=>const MakkoUserProfileScreen());
                       },
-                        child: ContainerDecorated(borderRadius: 20,child: Row(mainAxisSize: MainAxisSize.min,children: [
+                        child: const ContainerDecorated(borderRadius: 20,child: Row(mainAxisSize: MainAxisSize.min,children: [
                           Icon(Icons.account_circle),
                           SizedBox(width: 4,),
                           SmallText(text: "Mark Specture",fontWeight: FontWeight.w500,),

@@ -41,7 +41,7 @@ class _MakkoUserProfileScreenState extends State<MakkoUserProfileScreen> with Si
         child: Padding(
           padding: AppPaddings.paddingAll16,
           child: Column(children: [
-            SizedBox(height: 100,width: 100,child: ContainerDecorated(borderRadius: 50,child: ClipRRect(borderRadius: BorderRadius.circular(50),child: ImageCommon(src: "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",fit: BoxFit.cover,)),)),
+            SizedBox(height: 100,width: 100,child: ContainerDecorated(borderRadius: 50,child: ClipRRect(borderRadius: BorderRadius.circular(50),child: ImageCommon( "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",)),)),
             const SizedBox(height: 10,),
             const HeadingText(text: "Coffiestories"),
             const SizedBox(height: 24,),
@@ -77,10 +77,7 @@ class _MakkoUserProfileScreenState extends State<MakkoUserProfileScreen> with Si
               itemCount: list.length,
               itemBuilder: (context, index) {
                 return ClipRRect(borderRadius: BorderRadius.circular(16),
-                  child: ImageCommon(
-                    fit: BoxFit.fitWidth,
-                    src: list[index],
-                  ),
+                  child: ImageCommon(boxFit: BoxFit.fitWidth, list[index],),
                 );
 
                 //   Padding(
@@ -155,7 +152,7 @@ class _MakkoUserProfileScreenState extends State<MakkoUserProfileScreen> with Si
             //               return Padding(
             //                 padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 8),
             //                 child: Row(children: [
-            //                   SizedBox( height: 50, width: 50,child: ClipRRect(borderRadius: BorderRadius.circular(16),child: ImageCommon(src:" list[index]",fit: BoxFit.cover,))),
+            //                   SizedBox( height: 50, width: 50,child: ClipRRect(borderRadius: BorderRadius.circular(16),child: ImageCommon(" list[index]",))),
             //                   SizedBox(width: 16,),
             //                   SmallText(text: "Technology and Innovation",fontWeight: FontWeight.w500,)
             //                 ],),
@@ -164,7 +161,7 @@ class _MakkoUserProfileScreenState extends State<MakkoUserProfileScreen> with Si
             //           ),
             //         ],
             //       ),));
-            //     },child: SizedBox(height: 24,width: 24,child: ImageCommon(src: AppImagesConst.filter))),
+            //     },child: SizedBox(height: 24,width: 24,child: ImageCommon( AppImagesConst.filter))),
             //     SizedBox(width: 16,)
             //   ],
             // ),

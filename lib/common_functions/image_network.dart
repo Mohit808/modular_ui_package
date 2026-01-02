@@ -1,40 +1,48 @@
 import 'dart:io';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:modular_ui_package/utils/app_images.dart';
+import 'package:shimmer_animation/shimmer_animation.dart';
+
+import '../common_widget/container_decorated.dart';
+import '../utils/app_images.dart';
 
 class ImageCommon extends StatelessWidget {
-  const ImageCommon({super.key, required this.src, this.color, this.borderRadius, this.height, this.width, this.fit,this.isFile});
-  final String src;
-  final Color? color;
-  final double? borderRadius;
+  const ImageCommon(this.src,{super.key, this.height, this.width, this.borderRadius, this.size, this.sizeAndCircle, this.color, this.boxFit,});
+  final dynamic src;
+  final double? size;
+  final double? sizeAndCircle;
   final double? height;
   final double? width;
-  final BoxFit? fit;
-  final bool? isFile;
+  final double? borderRadius;
+  final Color? color;
+  final BoxFit? boxFit;
+
 
   @override
   Widget build(BuildContext context) {
-    return
-        ClipRRect(borderRadius: BorderRadius.circular(borderRadius??0),child:
-        isFile!=null?
-        Image.file(File(src),height: height,width: width,color:color,fit: fit,errorBuilder: (a,b,c){
-          return Image.asset(AppImagesConst.imageError,height: height,width: width,errorBuilder: (a,b,c){return SizedBox();},);
-        },):
+    return ClipRRect(borderRadius: BorderRadiusGeometry.circular(sizeAndCircle??borderRadius??0),child:
+    "$src".startsWith("http") || "$src".startsWith("http") ?
+    // Image.network("$src",errorBuilder: (a,b,c){return Image.asset(AppImages.user,errorBuilder: (a,b,c)=>SizedBox(),);},):
+    CachedNetworkImage(
+      imageUrl: "$src",
+      width: sizeAndCircle??size??width,
+      height: sizeAndCircle??size??height,
+      fit: boxFit??BoxFit.cover,
+      imageBuilder: (context, imageProvider) => Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(image: imageProvider, fit: boxFit??BoxFit.cover,
+            // colorFilter: ColorFilter.mode(Colors.red, BlendMode.colorBurn)
+          ),
+        ),
+      ),
+      placeholder: (context, url) => Shimmer(child: ContainerDecorated(color: Color(0xFF151515),)),
+      errorWidget: (context, url, error) => Image.asset(AppImagesConst.user,height: sizeAndCircle??size??height,width:sizeAndCircle??size?? width,),
+      // errorWidget: (context, url, error) => Icon(Icons.error),
+    ):
 
-        src.startsWith("http") ?
-        Image.network(src,height: height,width: width,color:color,fit: fit,errorBuilder: (a,b,c){
-          return Image.asset(AppImagesConst.imageError,height: height,width: width,errorBuilder: (a,b,c){return SizedBox();},);
-        },):
-
-            src.contains("assets")?
-        Image.asset(src,height: height,width: width,color: color,fit: fit,errorBuilder: (a,b,c){
-          return Image.asset(AppImagesConst.imageError,color: color,height: height,width: width,errorBuilder: (a,b,c){return SizedBox();},);
-        },)
-                :
-            Image.file(File(src),height: height,width: width,color:color,fit: fit,errorBuilder: (a,b,c){
-              return Image.asset(AppImagesConst.imageError,height: height,width: width,errorBuilder: (a,b,c){return SizedBox();},);
-            },)
-          ,);
+    "$src".startsWith("assets")?Image.asset("$src",height: sizeAndCircle??size?? height,width:  sizeAndCircle??size??width,fit: boxFit??BoxFit.cover,color: color,errorBuilder: (a,b,c){return Image.asset(AppImagesConst.user,height: sizeAndCircle??size?? height,width: sizeAndCircle??size?? width,errorBuilder: (a,b,c)=>SizedBox(),);},):
+    Image.file(File("$src"),height: sizeAndCircle??size?? height,width: sizeAndCircle??size?? width,fit: boxFit??BoxFit.cover,errorBuilder: (a,b,c){return Image.asset(AppImagesConst.user,height: sizeAndCircle??size??height,width: sizeAndCircle??size??width,errorBuilder: (a,b,c)=>SizedBox(),);},),)
+    ;
   }
 }

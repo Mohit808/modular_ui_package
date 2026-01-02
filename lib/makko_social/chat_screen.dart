@@ -25,7 +25,7 @@ class ChatScreen extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 16.0),
                   child: Row(children: [
-                    SizedBox(height: 40,width: 40,child: ClipRRect(borderRadius: BorderRadius.circular(50),child: ImageCommon(src: "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",fit: BoxFit.cover,))),
+                    SizedBox(height: 40,width: 40,child: ClipRRect(borderRadius: BorderRadius.circular(50),child: ImageCommon("https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80"))),
                     SizedBox(width: 16,),
                     Expanded(
                       child: Column(crossAxisAlignment: CrossAxisAlignment.start,

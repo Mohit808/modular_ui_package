@@ -17,7 +17,7 @@ class MakkoProfileScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(children: [
-            ContainerDecorated(borderRadius: 40,child: ImageCommon(src: AppImagesConst.user,),),
+            ContainerDecorated(borderRadius: 40,child: ImageCommon( AppImagesConst.user,),),
             SizedBox(height: 10,),
             HeadingText(text: "Coffiestories"),
             SizedBox(height: 4,),

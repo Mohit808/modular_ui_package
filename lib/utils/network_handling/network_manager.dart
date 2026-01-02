@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
-import '../app_const.dart';
+import '../app_urls.dart';
 import '../utils.dart';
 import 'custom_exception.dart';
 
@@ -17,8 +17,8 @@ class NetworkManager{
     };
     try{
       print(header);
-      print(AppConstModule.baseUrl+endPoint);
-      var res=await http.get(Uri.parse(AppConstModule.baseUrl+endPoint),headers: header);
+      print(AppUrls.baseUrl+endPoint);
+      var res=await http.get(Uri.parse(AppUrls.baseUrl+endPoint),headers: header);
       // print(res.body);
       return responseReturn(res);
     }catch(e){
@@ -42,9 +42,9 @@ class NetworkManager{
       });
     }
     print(header);
-    print(AppConstModule.baseUrl+endPoint);
+    print(AppUrls.baseUrl+endPoint);
     print(data);
-    var res=await http.post(Uri.parse(AppConstModule.baseUrl+endPoint),body: data,headers: header);
+    var res=await http.post(Uri.parse(AppUrls.baseUrl+endPoint),body: data,headers: header);
     try{
       print(res.body);
       return responseReturn(res);
@@ -59,9 +59,9 @@ class NetworkManager{
       "accept":"application/json"
     };
     print(header);
-    print(AppConstModule.baseUrl+endPoint);
+    print(AppUrls.baseUrl+endPoint);
     print(data);
-    var res=await http.put(Uri.parse(AppConstModule.baseUrl+endPoint),body: data,headers: header);
+    var res=await http.put(Uri.parse(AppUrls.baseUrl+endPoint),body: data,headers: header);
     try{
       print(res.body);
       return responseReturn(res);
@@ -76,9 +76,9 @@ class NetworkManager{
       "accept":"application/json"
     };
     print(header);
-    print(AppConstModule.baseUrl+endPoint);
+    print(AppUrls.baseUrl+endPoint);
     print(data);
-    var res=await http.delete(Uri.parse(AppConstModule.baseUrl+endPoint),body: data,headers: header);
+    var res=await http.delete(Uri.parse(AppUrls.baseUrl+endPoint),body: data,headers: header);
     try{
       print(res.body);
       return responseReturn(res);
