@@ -9,7 +9,7 @@ import '../common_widget/border_atom.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_sizes.dart';
 String token="";
-late GetStorage box;
+late GetStorage boxModular;
 UserInfo? userInfo;
 
 
@@ -34,7 +34,7 @@ hideKeyboard(){
 }
 
 
-class Utils{
+class UtilsModular{
   init({colorCode, double? radius,LinearGradient? gradient,Color? textFieldBackgroundColor}){
     setUpThemeColor(colorCode??0xFF345259); //0xFF345259
     AppColors.textFieldBackgroundColor=textFieldBackgroundColor;
@@ -42,7 +42,7 @@ class Utils{
     BorderAtom.setRadiusTextField= BorderRadius.circular(radius??AppSizes.h_4); //AppSizes.h_10
     BorderAtom.borderRadiusValue = radius??AppSizes.h_4;
     GradientAtom.gradient=gradient;
-    initialize();
+    initializeModular();
   }
 
   setUpThemeColor(code){
@@ -63,13 +63,18 @@ class Utils{
   static String userToken="token";
   static String user="user";
 
-  initialize() async {
+  initializeModular() async {
     await GetStorage.init();
-    box=GetStorage();
-    var value=box.read(Utils.userToken);
+    boxModular=GetStorage();
+    var value=boxModular.read(UtilsModular.userToken);
     if(value!=null){
       token=value;
       print("TOKEEEEN= $token");
+    }
+    var user = boxModular.read(UtilsModular.user);
+    print("userrrrrrrrrRRRRR $user");
+    if(user!=null){
+      userInfo=UserInfo.fromJson(user);
     }
   }
 

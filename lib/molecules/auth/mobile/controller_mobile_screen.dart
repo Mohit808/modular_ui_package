@@ -61,7 +61,7 @@ class ControllerMobileScreen extends GetxController{
       ModelX modelX=ModelX.fromJson(res);
       apiResponseOtp=ApiResponse(status: Status.COMPLETED,data: modelX,message: modelX.message);
       if(modelX.status==200) {
-        box.write(Utils.user, res);
+        boxModular.write(UtilsModular.user, res);
         Get.back(result: res);
       }else{
         showToastError(modelX.message);

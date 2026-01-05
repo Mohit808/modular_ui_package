@@ -30,6 +30,7 @@ class StoryMainWidget extends StatelessWidget {
         builder: (controller) {
           Color color=isBlack?Colors.white:Colors.black;
           Color colorLight=isBlack?Colors.white70:Colors.black54;
+          print(userInfo?.image);
           return Column(crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SingleChildScrollView(scrollDirection: Axis.horizontal,
