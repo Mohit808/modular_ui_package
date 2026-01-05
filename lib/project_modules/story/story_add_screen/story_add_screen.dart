@@ -21,7 +21,7 @@ class StoryAddScreen extends StatelessWidget {
     return GetBuilder(init: ControllerMainStory(),
       builder: (controller) {
         return Scaffold(
-          appBar: AppBarCommon(title: "Add Story",color: AppColors.primary),
+          appBar: AppBarCommon(title: "Add Story",color: AppColors.primary,elevation: 0,),
           body: Stack(children: [
             Center(child: Image.file(File(path!),)),
             Positioned(bottom: 16,left: 16,right:16,child: Column(children: [
@@ -35,7 +35,7 @@ class StoryAddScreen extends StatelessWidget {
                 Expanded(
                   child: TextFieldCommon(controller: textEditingController,onChanged: (text){
                     controller.update();
-                  },hintText: "Add a caption...".tr,borderRadius: 30,fillColor: AppColors.primary.withOpacity(0.2),),
+                  },hintText: "Add a caption...".tr,borderRadius: 30,fillColor: AppColors.primary,colorText: Colors.white,colorHint: Colors.white70,),
                 ),
 
 

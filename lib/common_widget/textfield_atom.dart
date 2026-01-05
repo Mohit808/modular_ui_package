@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:modular_ui_package/theme/app_colors.dart';
 
+import '../text_atoms/text_common.dart';
 import '../theme/app_sizes.dart';
 import 'border_atom.dart';
 
@@ -16,6 +16,15 @@ class TextFieldCommon extends TextFormField{
     bool? hideOutlineBorder,
     double? borderRadius,
     Color? fillColor,
+    bool? isDense,
+    double? contentPadding,
+    Color? BorderColor,
+    Color? colorHint,
+    Color? colorText,
+    dynamic label,
+    super.minLines,
+    Function()? onTapOutside,
+    Function(String)?onFieldSubmitted,
     super.enabled,
     super.onTap,
     super.controller,
@@ -30,27 +39,34 @@ class TextFieldCommon extends TextFormField{
     super.focusNode,
     super.maxLines,
     super.textInputAction,
-    bool isPassword=false
+    bool isPassword=false,
+    super.autofillHints,
+    TextCapitalization? textCapitalization,
+    bool? tapOutsideOff
+
   }):super(
       textAlign: textAlign??TextAlign.start,
       obscureText: isPassword,
-
-      onTapOutside: (value){
+      onFieldSubmitted: onFieldSubmitted,
+      onTapOutside: tapOutsideOff!=null?null: (value){
         FocusManager.instance.primaryFocus?.unfocus();
         SystemChannels.textInput.invokeMethod('TextInput.hide');
+        if(onTapOutside!=null){
+          onTapOutside();
+        }
       },
-      style: const TextStyle(fontSize: 12),
-      decoration: InputDecoration(enabledBorder: hideOutlineBorder!=null?null:OutlineInputBorder(borderRadius: borderRadius!=null?BorderRadius.circular(borderRadius):BorderAtom.borderRadiusTextField,borderSide: BorderSide(color: Colors.grey.shade300)),
+      style: TextStyle(fontSize: 12,color: colorText),
+      textCapitalization: textCapitalization?? TextCapitalization.sentences,
+
+      decoration: InputDecoration(label: label.runtimeType==String?SmallText(text: label,):label,filled: true,isDense: isDense,fillColor:fillColor,enabledBorder: hideOutlineBorder!=null?null:OutlineInputBorder(borderRadius: borderRadius!=null?BorderRadius.circular(borderRadius):BorderAtom.borderRadiusTextField,borderSide: BorderSide(color: BorderColor??Colors.grey.shade300)),
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
-        fillColor: fillColor??AppColors.textFieldBackgroundColor,
-        filled: fillColor!=null?true:AppColors.textFieldBackgroundColor!=null?true:null,
         hintText: hintText,
-        hintStyle: const TextStyle(fontSize: 12),
-        contentPadding: const EdgeInsets.all(AppSizes.h_12),
+        hintStyle:  TextStyle(fontSize: 12,color: colorHint),
+        contentPadding:  EdgeInsets.all(contentPadding??AppSizes.h_12),
         border:  hideOutlineBorder!=null?null:OutlineInputBorder(
           borderRadius:  borderRadius!=null?BorderRadius.circular(borderRadius):BorderAtom.borderRadiusTextField,
-          borderSide: const BorderSide(
+          borderSide:  const BorderSide(
               width: AppSizes.w_0,
               style: BorderStyle.solid
           ),
