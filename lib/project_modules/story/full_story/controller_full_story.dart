@@ -29,7 +29,7 @@ class ControllerFullStory extends GetxController{
   @override
   void onInit() {
     super.onInit();
-    // startProgressTimer();
+    startProgressTimer();
     if(initialIndex!=null){
       pageController=PageController(initialPage: initialIndex!);
       postData(listGroupedStory[initialIndex!].items![initialIndexItem??0].id);

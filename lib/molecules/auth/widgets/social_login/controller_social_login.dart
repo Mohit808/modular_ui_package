@@ -9,7 +9,14 @@ class ControllerSocialLogin extends GetxController{
 
   loginWithGoogle()async{
     try{
-      GoogleSignIn googleSignIn = GoogleSignIn(scopes: [
+      var instance=GoogleSignIn.instance;
+      await instance.initialize(serverClientId: "232148425129-3q1hlbsv0uoppd0b2c7g3ubns7kqdrng.apps.googleusercontent.com");
+      GoogleSignInAccount googleSignInAccount=await instance.authenticate();
+      return googleSignInAccount.authentication.idToken;
+
+
+
+      /*GoogleSignIn googleSignIn = GoogleSignIn(scopes: [
         'email'
       ],serverClientId: "232148425129-3q1hlbsv0uoppd0b2c7g3ubns7kqdrng.apps.googleusercontent.com");
       var googleAccount=await googleSignIn.signIn();
@@ -23,7 +30,7 @@ class ControllerSocialLogin extends GetxController{
       // print(googleAccount.displayName);
       // print(googleAccount.id);
       // googleAccount.photoUrl;
-      // googleAccount.email;
+      // googleAccount.email;*/
     }catch(e){}
   }
 

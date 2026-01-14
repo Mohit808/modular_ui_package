@@ -28,6 +28,7 @@ class StoryMainWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder(init: ControllerMainStory(),
         builder: (controller) {
+
           Color color=isBlack?Colors.white:Colors.black;
           Color colorLight=isBlack?Colors.white70:Colors.black54;
           return Column(crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,8 +99,8 @@ class StoryMainWidget extends StatelessWidget {
                                 child: Stack(
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsets.all(4.0),
-                                      child: WhatsAppStoryWidget(size: controller.listMyStory.isEmpty? 50:35,storyCount: controller.listMyStory.length,child: ContainerDecorated(padding: 0,borderRadius: 50,color: AppColors.primary,child: ImageCommon(userInfo?.image,borderRadius: 50,)),),
+                                      padding: EdgeInsets.all(controller.listMyStory.isEmpty?2:4.0),
+                                      child: WhatsAppStoryWidget(size: controller.listMyStory.isEmpty? 55:40,storyCount: controller.listMyStory.length,child: ContainerDecorated(padding: 0,borderRadius: 50,color: AppColors.primary,child:  userInfo?.image==null ||  userInfo!.image!.isEmpty?ContainerDecorated(width: 55,height: 55,borderRadius: 55,color: Colors.deepPurple,child: Center(child: SmallText(text: "${userInfo?.name}".split("").first,size: 18,fontWeight: FontWeight.w600,color: Colors.white,))): ImageCommon(userInfo?.image,borderRadius: 50,)),),
                                     ),
                                     Positioned(bottom: 0,right: 0,child: Container(decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(40)),child: const Icon(Icons.add_circle,color: Colors.green,)))
                                   ],
@@ -136,7 +137,6 @@ class StoryMainWidget extends StatelessWidget {
                               padding: const EdgeInsets.only(top: 4.0,left: 4),
                               child: InkWell(onTap: (){
                                 if (onUserTap != null) onUserTap!(userId: controller.listGroupedStory[index].userId!, name:  controller.listGroupedStory[index].name!, image: controller.listGroupedStory[index].image!,);
-
                               },child: Container(decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),border: Border.all(color: Colors.white,width: 0.5)),child: ImageCommon("${controller.listGroupedStory[index].image}",height: 24,width: 24,borderRadius: 40,))),
                             )
                           ],
