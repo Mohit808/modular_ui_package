@@ -36,6 +36,7 @@ class NetworkManager{
       // "accept":"application/json",
       // "Content-Type": "application/json"
     };
+    if(token.isEmpty) header={};
     if(contentJson!=null){
       header.addAll({
         "Content-Type": "application/json"
